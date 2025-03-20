@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "TudoGostoso Clipper",
+  "version": "1.0",
+  "description": "Clip recipes from TudoGostoso in Markdown format",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting",
+    "notifications",
+    "https://www.tudogostoso.com.br/*"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.tudogostoso.com.br/receita/*"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
